@@ -9,20 +9,24 @@ It can play the game flawlessly in 3 to 9 generation with current settings and g
 
 ![suga-flappy-nn-birds.gif](suga-flappy-nn-birds.gif)
 
-## Structure
+## Structure: experiment with parameters
 
-Find the NeuralNet class in [src/model/NeuralNet.py](./src/model/NeuralNet.py);
+- (runnable!) Find the Flappy-Bird game loop in [src/flappy_bird_game/flappy_bird_game.py](./src/flappy_bird_game/flappy_bird_game.py)
+- (runnable!) Find the NeuralNet class in [src/model/NeuralNet.py](./src/model/NeuralNet.py);
+- Find the genetic (Neural-evolution) algorithm in [src/flappy_bird_game/neuro_evolution_algorithm.py](./src/flappy_bird_game/neuro_evolution_algorithm.py)
+- Find the game constants in [src/flappy_bird_game/constants.py](./src/flappy_bird_game/constants.py)
+- Play with Ai-bird's brain and how it thinks in [Bird.py](./src/flappy_bird_game/Bird.py) class.
 
-Find the Flappy-Bird game loop in [src/neural_net_test_games/flappy_bird_game.py](./src/neural_net_test_games/flappy_bird_game.py)
+## To Run & Play
 
-Find the genetic (Neural-evolution) algorithm in HERE
+- So if you run the [NeuralNet.py](./src/model/NeuralNet.py) file, it has a XOR test where the net accurately predicts the output of XOR operation
+- To run the Flappy-Bird Game, run the file [flappy_bird_game.py](./src/flappy_bird_game/flappy_bird_game.py).
+- Hit `SPACE` to play along with the AI-Birds! the green bird is YOURSELF
 
-
-## Install & Run & Play
-
-#### Install 
+## To Install
 
 This Neural-net is made only with `numpy` and `pygame`.
+
 But for those not use to Python: use Anaconda! To create an env in coda, open conda shell and:
 
 - create and activate a conda env called neural-net
@@ -32,17 +36,5 @@ But for those not use to Python: use Anaconda! To create an env in coda, open co
 - to install packages
 `conda install --file=requirements.txt`
 
-#### Run & Play
-
-So if you run the [NeuralNet.py](./src/model/NeuralNet.py) file, it has a XOR test where the net accurately predicts the output of XOR operation
-
-To run the Flappy-Bird Game, run [flappy_bird_game.py](./src/neural_net_test_games/flappy_bird_game.py).
-
-Hit `SPACE` to play along with the AI-Birds! the green bird is YOU
-
-### Experiment with parameters
-
-- Play with Ai-bird brain's inputs and hidden nodes in [Bird.py](./src/neural_net_test_games/Bird.py) class.
-- Play with the neuro-evolution algorithm HERE
 
 
