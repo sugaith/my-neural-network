@@ -29,12 +29,13 @@ This Neural-net is made only with `numpy` and `pygame`.
 
 But for those not use to Python: use Anaconda! To create an env in coda, open conda shell and:
 
-- create and activate a conda env called neural-net
-`conda create --name suga-neural-net python=3.9`
-`conda activate suga-neural-net`
+- create, activate a conda env called neural-net and install packages
 
-- to install packages
-`conda install --file=requirements.txt`
+```shell
+conda create --name suga-neural-net python=3.9
+conda activate suga-neural-net
+conda install --file=requirements.txt
+```
 
 
 
