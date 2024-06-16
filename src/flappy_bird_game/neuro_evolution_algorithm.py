@@ -4,7 +4,7 @@ from src.flappy_bird_game.Bird import Bird
 from pygame import Surface
 
 MUTATION_RATE = np.float32(.45)
-BEST_ONES_DEAD_POOL = 9
+BEST_ONES_DEAD_POOL = 0
 BEST_ONES_PICK_COUNT = 3
 
 
@@ -42,10 +42,10 @@ def spawn_bird_generation(screen: Surface, gravity, count: int, previous_gen: No
 
     # pick best ones
     best_ones = previous_gen[:BEST_ONES_PICK_COUNT]
+    # give extra points to the best
     for i, bird in enumerate(reversed(best_ones)):
         bird.score += i
 
-    # add count
     GEN.count += 1
     print('GENERATION: ', GEN.count)
     print('previous_gen_count')

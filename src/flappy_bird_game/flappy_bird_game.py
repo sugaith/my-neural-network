@@ -19,7 +19,7 @@ gravity = 0.24
 pipe_velocity = -3
 
 pipes = []
-my_bird = Bird(y=HEIGHT, screen=screen, gravity=gravity, color=GREEN)
+my_bird = Bird(x=BIRD_X_POS//2,y=HEIGHT, screen=screen, gravity=gravity, color=GREEN)
 ai_birds = spawn_bird_generation(screen, gravity, AI_BIRDS_COUNT)
 dead_ai_birds: List[Bird] = []
 
@@ -79,6 +79,7 @@ while running:
         ai_bird.fly()
     my_bird.fly()
 
+    # render texts
     score_text = font.render("ai_birds: " + str(len(ai_birds)), True, WHITE)
     screen.blit(score_text, (9, 9))
     generation_count_text = font.render("generation: " + str(GEN.count), True, WHITE)
