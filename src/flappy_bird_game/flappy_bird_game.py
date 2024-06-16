@@ -28,7 +28,7 @@ running = True
 clock = pygame.time.Clock()
 
 
-# Font for AI birds count
+# Font for texts
 font = pygame.font.SysFont(size=36,name=None)
 
 # Create initial pipes
