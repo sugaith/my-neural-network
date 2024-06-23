@@ -24,6 +24,21 @@ def xavier_normal_distribution(
     weights_hidden2output_ref[:] = np.random.randn(hidden_count, output_count) * standard_deviation_output
 
 
+def deep_xavier_normal_distribution(input_count: int, hidden_layers: list, output_count: int, weights: list, biases: list):
+    # Initialize input to first hidden layer
+    standard_deviation_hidden = np.sqrt(1. / input_count)
+    weights[0][:] = np.random.randn(hidden_layers[0], input_count) * standard_deviation_hidden
+
+    # Initialize hidden layers
+    for i in range(1, len(hidden_layers)):
+        standard_deviation_hidden = np.sqrt(1. / hidden_layers[i - 1])
+        weights[i][:] = np.random.randn(hidden_layers[i], hidden_layers[i - 1]) * standard_deviation_hidden
+
+    # Initialize last hidden layer to output layer
+    standard_deviation_output = np.sqrt(1. / hidden_layers[-1])
+    weights[-1][:] = np.random.randn(output_count, hidden_layers[-1]) * standard_deviation_output
+
+
 def xavier_uniform_distribution(
         input_count: int,
         hidden_count: int,
