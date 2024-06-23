@@ -3,7 +3,7 @@ import numpy as np
 from src.flappy_bird_game.Bird import Bird
 from pygame import Surface
 
-MUTATION_RATE = np.float32(.33)
+MUTATION_RATE = np.float32(.45)
 BEST_ONES_DEAD_POOL = 0
 BEST_ONES_PICK_COUNT = 3
 
@@ -14,10 +14,10 @@ class Generation:
         self.count = 0
 
     def get_next_mutation_rate(self) -> np.float32:
+        base = self.count or 1
         """" formula to narrow the Mutation rate at each generation
-        mut_rate will trend to 0 on GEN.count ~ 9 (no much change in children)"""
-        new_mutation = MUTATION_RATE - self.count / 33
-        return new_mutation if new_mutation > 0 else 0.001
+        mut_rate will trend to 0 (no much change in children) on count++"""
+        return MUTATION_RATE / base
 
 
 GEN = Generation()
