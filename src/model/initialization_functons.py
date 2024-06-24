@@ -18,9 +18,9 @@ def xavier_normal_distribution(
         weights_hidden2output_ref: np.ndarray,
 ):
     standard_deviation_hidden = np.sqrt(1. / hidden_count)
-    standard_deviation_output = np.sqrt(1. / output_count)
-
     weights_inputs2hidden_ref[:] = np.random.randn(hidden_count, input_count) * standard_deviation_hidden
+
+    standard_deviation_output = np.sqrt(1. / output_count)
     weights_hidden2output_ref[:] = np.random.randn(hidden_count, output_count) * standard_deviation_output
 
 
