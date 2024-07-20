@@ -131,10 +131,10 @@ if __name__ == '__main__':
         {'inputs': np.array([0, 1]), 'targets': np.array([1])},
     ]
 
-    nn = DeepNeuralNet(2, [3, 3, 3], 1,
+    nn = DeepNeuralNet(2, [3, 3, 3, 3], 1,
                        initialization=deep_xavier_normal_distribution,
                        activation=sigmoid,
-                       learning_rate=np.float32(.45))
+                       learning_rate=np.float32(.1))
 
     print('UN-trained output ....')
     print(nn.feed_forward(np.array([0, 0])))
@@ -142,7 +142,7 @@ if __name__ == '__main__':
     print(nn.feed_forward(np.array([1, 0])))
     print(nn.feed_forward(np.array([0, 1])))
 
-    for epoch in range(900 * 1000):
+    for epoch in range(980 * 1000):
         for data in xor_training_data:
             nn.back_propagation(data.get('inputs'), data.get('targets'))
 
