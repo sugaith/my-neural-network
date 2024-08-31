@@ -2,3 +2,7 @@
 .idea/
 
 src/model/__pycache__/
+
+src/flappy_bird_game/__pycache__/
+
+src/utils/__pycache__/
